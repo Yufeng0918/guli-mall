@@ -1,0 +1,22 @@
+GET http://localhost:8080/coupon/coupon/list
+Accept: application/json
+
+###
+
+
+GET http://localhost:8000/member/growthchangehistory/list
+Accept: application/json
+
+###
+
+
+GET http://localhost:9000/order/order/list
+Accept: application/json
+
+###
+
+
+GET http://localhost:11000/ware/wareinfo/list
+Accept: application/json
+
+###

@@ -9,9 +9,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.bp.gulimall</groupId>
-  <artifactId>gulimall</artifactId>
+  <artifactId>gulimall-ware</artifactId>
   <version>0.0.1</version>
-  <name>gulimall</name>
+  <name>gulimall-ware</name>
   <description>Demo project for Spring Boot</description>
 
   <properties>
@@ -20,6 +20,12 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.bp.gulimall</groupId>
+      <artifactId>gulimall-common</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>

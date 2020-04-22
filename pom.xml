@@ -9,17 +9,20 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>com.bp.gulimall</groupId>
-  <artifactId>gulimall-ware</artifactId>
+  <artifactId>gulimall</artifactId>
   <version>0.0.1</version>
-  <name>gulimall-ware</name>
+  <name>gulimall</name>
   <description>Demo project for Spring Boot</description>
 
   <modules>
     <module>gulimall-coupon</module>
+    <module>gulimall-common</module>
     <module>gulimall-member</module>
     <module>gulimall-order</module>
     <module>gulimall-product</module>
     <module>gulimall-ware</module>
+    <module>renren-fast</module>
+    <module>renren-generator</module>
   </modules>
 
 </project>

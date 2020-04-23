@@ -20,3 +20,18 @@ GET http://localhost:11000/ware/wareinfo/list
 Accept: application/json
 
 ###
+
+GET http://localhost:7000/coupon/coupon/list
+Accept: application/json
+
+###
+
+GET http://localhost:7000/coupon/coupon/test
+Accept: application/json
+
+###
+
+GET http://localhost:8000/member/member/coupons
+Accept: application/json
+
+###

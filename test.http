@@ -55,3 +55,9 @@ Accept: application/json
 
 
 ###
+
+
+GET http://localhost:88/api/thirdparty/oss/policy
+Accept: application/json
+
+###

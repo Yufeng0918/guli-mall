@@ -42,6 +42,12 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return level1Menus;
     }
 
+    @Override
+    public void removeMenuByIds(List<Long> asList) {
+        //TODO check if delete menu has reference to other
+        baseMapper.deleteBatchIds(asList);
+    }
+
 
     private List<CategoryEntity> getChildrens(CategoryEntity root,List<CategoryEntity> all){
 

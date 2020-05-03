@@ -35,3 +35,23 @@ GET http://localhost:8000/member/member/coupons
 Accept: application/json
 
 ###
+
+GET http://localhost:10000/product/category/list/tree
+Accept: application/json
+
+###
+
+
+GET http://localhost:88/api/product/category/list/tree
+Accept: application/json
+
+###
+
+
+POST http://localhost:88/api/product/category/delete
+Accept: application/json
+
+{[1435]}
+
+
+###

@@ -3,6 +3,8 @@ package com.bp.gulimall.product.controller;
 import com.bp.common.utils.PageUtils;
 import com.bp.common.utils.R;
 import com.bp.common.valid.AddGroup;
+import com.bp.common.valid.UpdateGroup;
+import com.bp.common.valid.UpdateStatusGroup;
 import com.bp.gulimall.product.entity.BrandEntity;
 import com.bp.gulimall.product.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,7 +71,7 @@ public class BrandController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("product:brand:update")
-    public R update(@RequestBody BrandEntity brand) {
+    public R update(@Validated({UpdateGroup.class}) @RequestBody BrandEntity brand) {
         brandService.updateById(brand);
 
         return R.ok();
@@ -78,7 +80,7 @@ public class BrandController {
 
     @RequestMapping("/update/status")
     //@RequiresPermissions("product:brand:update")
-    public R updateStatus(@RequestBody BrandEntity brand) {
+    public R updateStatus(@Validated({UpdateStatusGroup.class})@RequestBody BrandEntity brand) {
         brandService.updateById(brand);
         return R.ok();
     }

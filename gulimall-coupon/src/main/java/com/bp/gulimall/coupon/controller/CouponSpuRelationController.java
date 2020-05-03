@@ -1,21 +1,16 @@
 package com.bp.gulimall.coupon.controller;
 
+import com.bp.common.utils.PageUtils;
+import com.bp.common.utils.R;
+import com.bp.gulimall.coupon.entity.CouponSpuRelationEntity;
+import com.bp.gulimall.coupon.service.CouponSpuRelationService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.Arrays;
 import java.util.Map;
 
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.bp.gulimall.coupon.entity.CouponSpuRelationEntity;
-import com.bp.gulimall.coupon.service.CouponSpuRelationService;
-import com.bp.common.utils.PageUtils;
-import com.bp.common.utils.R;
-
 
 
 /**
@@ -36,7 +31,7 @@ public class CouponSpuRelationController {
      */
     @RequestMapping("/list")
     //@RequiresPermissions("coupon:couponspurelation:list")
-    public R list(@RequestParam Map<String, Object> params){
+    public R list(@RequestParam Map<String, Object> params) {
         PageUtils page = couponSpuRelationService.queryPage(params);
 
         return R.ok().put("page", page);
@@ -48,8 +43,8 @@ public class CouponSpuRelationController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:couponspurelation:info")
-    public R info(@PathVariable("id") Long id){
-		CouponSpuRelationEntity couponSpuRelation = couponSpuRelationService.getById(id);
+    public R info(@PathVariable("id") Long id) {
+        CouponSpuRelationEntity couponSpuRelation = couponSpuRelationService.getById(id);
 
         return R.ok().put("couponSpuRelation", couponSpuRelation);
     }
@@ -59,8 +54,8 @@ public class CouponSpuRelationController {
      */
     @RequestMapping("/save")
     //@RequiresPermissions("coupon:couponspurelation:save")
-    public R save(@RequestBody CouponSpuRelationEntity couponSpuRelation){
-		couponSpuRelationService.save(couponSpuRelation);
+    public R save(@RequestBody CouponSpuRelationEntity couponSpuRelation) {
+        couponSpuRelationService.save(couponSpuRelation);
 
         return R.ok();
     }
@@ -70,8 +65,8 @@ public class CouponSpuRelationController {
      */
     @RequestMapping("/update")
     //@RequiresPermissions("coupon:couponspurelation:update")
-    public R update(@RequestBody CouponSpuRelationEntity couponSpuRelation){
-		couponSpuRelationService.updateById(couponSpuRelation);
+    public R update(@RequestBody CouponSpuRelationEntity couponSpuRelation) {
+        couponSpuRelationService.updateById(couponSpuRelation);
 
         return R.ok();
     }
@@ -81,8 +76,8 @@ public class CouponSpuRelationController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:couponspurelation:delete")
-    public R delete(@RequestBody Long[] ids){
-		couponSpuRelationService.removeByIds(Arrays.asList(ids));
+    public R delete(@RequestBody Long[] ids) {
+        couponSpuRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }

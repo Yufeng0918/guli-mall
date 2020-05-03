@@ -7,8 +7,6 @@ import com.bp.gulimall.ware.entity.PurchaseDetailEntity;
 import java.util.Map;
 
 /**
- * 
- *
  * @author daiyu
  * @email jiangyufeng@gmail.com
  * @date 2020-04-22 11:53:53

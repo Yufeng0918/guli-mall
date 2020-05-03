@@ -1,21 +1,19 @@
 package com.bp.gulimall.product.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.bp.common.utils.PageUtils;
+import com.bp.common.utils.Query;
+import com.bp.gulimall.product.dao.CategoryDao;
+import com.bp.gulimall.product.entity.CategoryEntity;
+import com.bp.gulimall.product.service.CategoryService;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.bp.common.utils.PageUtils;
-import com.bp.common.utils.Query;
-
-import com.bp.gulimall.product.dao.CategoryDao;
-import com.bp.gulimall.product.entity.CategoryEntity;
-import com.bp.gulimall.product.service.CategoryService;
 
 
 @Service("categoryService")
@@ -35,10 +33,10 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
     public List<CategoryEntity> listWithTree() {
 
         List<CategoryEntity> entities = baseMapper.selectList(null);
-        List<CategoryEntity> level1Menus = entities.stream().filter(categoryEntity ->categoryEntity.getParentCid() == 0).map((menu)->{
-            menu.setChildren(getChildrens(menu,entities));
+        List<CategoryEntity> level1Menus = entities.stream().filter(categoryEntity -> categoryEntity.getParentCid() == 0).map((menu) -> {
+            menu.setChildren(getChildrens(menu, entities));
             return menu;
-        }).sorted(Comparator.comparingInt(menu -> (menu.getSort() == null? 0 : menu.getSort()))).collect(Collectors.toList());
+        }).sorted(Comparator.comparingInt(menu -> (menu.getSort() == null ? 0 : menu.getSort()))).collect(Collectors.toList());
         return level1Menus;
     }
 
@@ -49,14 +47,14 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
     }
 
 
-    private List<CategoryEntity> getChildrens(CategoryEntity root,List<CategoryEntity> all){
+    private List<CategoryEntity> getChildrens(CategoryEntity root, List<CategoryEntity> all) {
 
         List<CategoryEntity> children = all.stream().filter(categoryEntity -> {
             return categoryEntity.getParentCid() == root.getCatId();
         }).map(categoryEntity -> {
-            categoryEntity.setChildren(getChildrens(categoryEntity,all));
+            categoryEntity.setChildren(getChildrens(categoryEntity, all));
             return categoryEntity;
-        }).sorted(Comparator.comparingInt(menu -> (menu.getSort() == null? 0 : menu.getSort()))).collect(Collectors.toList());
+        }).sorted(Comparator.comparingInt(menu -> (menu.getSort() == null ? 0 : menu.getSort()))).collect(Collectors.toList());
 
         return children;
     }

@@ -3,7 +3,7 @@
 
 <mapper namespace="com.bp.gulimall.product.dao.CategoryBrandRelationDao">
 
-	<!-- 可根据自己的需求，是否要使用 -->
+    <!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.bp.gulimall.product.entity.CategoryBrandRelationEntity" id="categoryBrandRelationMap">
         <result property="id" column="id"/>
         <result property="brandId" column="brand_id"/>

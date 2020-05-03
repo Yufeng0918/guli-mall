@@ -27,3 +27,8 @@ server:
 logging:
   level:
     com.bp.gulimall: debug
+
+
+  spring.cloud.alicloud.access-key=Your Alibaba Cloud AK
+  spring.cloud.alicloud.secret-key=Your Alibaba Cloud SK
+  spring.cloud.alicloud.oss.endpoint=***.aliyuncs.com

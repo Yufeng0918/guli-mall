@@ -4,3 +4,4 @@
 **/.mvn
 **/target
 .idea
+*.log

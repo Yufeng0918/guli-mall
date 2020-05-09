@@ -139,3 +139,20 @@ public class ListValueConstraintValidator implements ConstraintValidator<ListVal
 ```properties
 com.bp.common.valid.ListValue.message = must be 0 or 1
 ```
+
+## Mybatis Pagation
+```java
+@Configuration
+@EnableTransactionManagement
+@MapperScan("com.bp.gulimall.product")
+public class MyBatisConfig {
+
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        PaginationInterceptor paginationInterceptor = new PaginationInterceptor();
+        paginationInterceptor.setOverflow(true);
+        paginationInterceptor.setLimit(1000);
+        return paginationInterceptor;
+    }
+}
+```

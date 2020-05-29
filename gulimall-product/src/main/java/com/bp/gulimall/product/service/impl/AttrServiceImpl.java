@@ -8,6 +8,7 @@ import com.bp.common.utils.Query;
 import com.bp.gulimall.product.dao.AttrDao;
 import com.bp.gulimall.product.entity.AttrEntity;
 import com.bp.gulimall.product.service.AttrService;
+import com.bp.gulimall.product.vo.AttrVo;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
@@ -24,6 +25,11 @@ public class AttrServiceImpl extends ServiceImpl<AttrDao, AttrEntity> implements
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public void saveAttr(AttrVo attr) {
+
     }
 
 }
